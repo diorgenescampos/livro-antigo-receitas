@@ -1,1 +1,246 @@
 
+/* ===== RESET ===== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#F8F3EB;
+    color:#2F2A26;
+    line-height:1.7;
+}
+
+/* ===== CONTAINER ===== */
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* ===== HEADER ===== */
+
+.header{
+    background:white;
+    position:sticky;
+    top:0;
+    z-index:999;
+    box-shadow:0 2px 12px rgba(0,0,0,.08);
+}
+
+.header .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 0;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    color:#5B3A29;
+}
+
+nav{
+    display:flex;
+    gap:25px;
+    align-items:center;
+}
+
+nav a{
+    text-decoration:none;
+    color:#444;
+    font-weight:600;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#B86B4B;
+}
+
+/* ===== BOTÕES ===== */
+
+.btn-primary,
+.btn-secondary,
+.btn-menu{
+
+    display:inline-block;
+
+    padding:14px 30px;
+
+    border-radius:8px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.btn-primary{
+
+    background:#B86B4B;
+
+    color:white;
+}
+
+.btn-primary:hover{
+
+    background:#944d30;
+}
+
+.btn-secondary{
+
+    border:2px solid #B86B4B;
+
+    color:#B86B4B;
+}
+
+.btn-secondary:hover{
+
+    background:#B86B4B;
+
+    color:white;
+}
+
+.btn-menu{
+
+    background:#5B3A29;
+
+    color:white;
+}
+
+/* ===== HERO ===== */
+
+.hero{
+
+    padding:80px 0;
+}
+
+.hero-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    align-items:center;
+
+    gap:60px;
+}
+
+.hero h1{
+
+    font-size:54px;
+
+    margin-bottom:20px;
+
+    color:#5B3A29;
+}
+
+.hero p{
+
+    font-size:20px;
+
+    margin-bottom:35px;
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:20px;
+}
+
+.hero img{
+
+    width:100%;
+}
+
+/* ===== BENEFÍCIOS ===== */
+
+.beneficios{
+
+    padding:80px 0;
+
+    background:white;
+}
+
+.beneficios h2{
+
+    text-align:center;
+
+    font-size:40px;
+
+    margin-bottom:50px;
+}
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+}
+
+.card{
+
+    background:#F8F3EB;
+
+    padding:35px;
+
+    border-radius:14px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+}
+
+.card h3{
+
+    margin:15px 0;
+}
+
+/* ===== CTA ===== */
+
+.cta{
+
+    padding:90px 0;
+
+    text-align:center;
+}
+
+.cta h2{
+
+    font-size:42px;
+
+    margin-bottom:30px;
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+
+    background:#2F2A26;
+
+    color:white;
+
+    text-align:center;
+
+    padding:35px 0;
+}
