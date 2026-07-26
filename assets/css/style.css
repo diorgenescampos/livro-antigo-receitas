@@ -1,5 +1,6 @@
-
-/* ===== RESET ===== */
+/* ==========================================
+   RESET
+========================================== */
 
 *{
     margin:0;
@@ -12,235 +13,559 @@ html{
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#F8F3EB;
-    color:#2F2A26;
+    font-family:'Poppins',sans-serif;
+    background:#FAF6EF;
+    color:#2E2E2E;
     line-height:1.7;
+    overflow-x:hidden;
 }
 
-/* ===== CONTAINER ===== */
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+ul{
+    list-style:none;
+}
+
+/* ==========================================
+   VARIÁVEIS
+========================================== */
+
+:root{
+
+    --cor-fundo:#FAF6EF;
+    --cor-branco:#FFFFFF;
+    --cor-marrom:#4E342E;
+    --cor-marrom-claro:#795548;
+    --cor-dourado:#C9A227;
+    --cor-creme:#FFFDF8;
+    --cor-borda:#E8E1D5;
+    --cor-texto:#2E2E2E;
+
+    --sombra:0 15px 40px rgba(0,0,0,.08);
+
+    --radius:18px;
+
+    --transition:.35s;
+
+}
+
+/* ==========================================
+   CONTAINER
+========================================== */
 
 .container{
-    width:90%;
-    max-width:1200px;
+
+    width:min(1180px,92%);
     margin:auto;
+
 }
 
-/* ===== HEADER ===== */
+/* ==========================================
+   TÍTULOS
+========================================== */
+
+h1,h2,h3,h4{
+
+    font-family:'Cormorant Garamond',serif;
+    color:var(--cor-marrom);
+    line-height:1.2;
+
+}
+
+h1{
+
+    font-size:62px;
+    margin-bottom:25px;
+
+}
+
+h2{
+
+    font-size:46px;
+    margin-bottom:20px;
+
+}
+
+.section-title{
+
+    text-align:center;
+    margin-bottom:70px;
+
+}
+
+.section-title span{
+
+    color:var(--cor-dourado);
+    letter-spacing:3px;
+    font-size:14px;
+    font-weight:700;
+
+}
+
+.section-title p{
+
+    max-width:700px;
+    margin:auto;
+
+}
+
+/* ==========================================
+   HEADER
+========================================== */
 
 .header{
-    background:white;
-    position:sticky;
+
+    position:fixed;
     top:0;
+    width:100%;
     z-index:999;
-    box-shadow:0 2px 12px rgba(0,0,0,.08);
+
+    background:rgba(255,253,248,.92);
+
+    backdrop-filter:blur(12px);
+
+    border-bottom:1px solid var(--cor-borda);
+
 }
 
 .header .container{
+
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:20px 0;
+
+    padding:18px 0;
+
 }
 
 .logo{
-    font-size:28px;
-    font-weight:bold;
-    color:#5B3A29;
+
+    font-size:30px;
+    font-weight:700;
+    color:var(--cor-marrom);
+
 }
 
+/* ==========================================
+   MENU
+========================================== */
+
 nav{
+
     display:flex;
-    gap:25px;
+    gap:30px;
     align-items:center;
+
 }
 
 nav a{
-    text-decoration:none;
-    color:#444;
-    font-weight:600;
-    transition:.3s;
+
+    transition:var(--transition);
+    font-weight:500;
+
 }
 
 nav a:hover{
-    color:#B86B4B;
+
+    color:var(--cor-dourado);
+
 }
 
-/* ===== BOTÕES ===== */
+/* ==========================================
+   BOTÕES
+========================================== */
 
 .btn-primary,
 .btn-secondary,
 .btn-menu{
 
-    display:inline-block;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
 
-    padding:14px 30px;
+    padding:16px 30px;
 
-    border-radius:8px;
+    border-radius:999px;
 
-    text-decoration:none;
+    font-weight:600;
 
-    font-weight:bold;
+    transition:var(--transition);
 
-    transition:.3s;
 }
 
 .btn-primary{
 
-    background:#B86B4B;
+    background:var(--cor-dourado);
+    color:#fff;
 
-    color:white;
+    box-shadow:var(--sombra);
+
 }
 
 .btn-primary:hover{
 
-    background:#944d30;
+    transform:translateY(-4px);
+
 }
 
 .btn-secondary{
 
-    border:2px solid #B86B4B;
+    border:2px solid var(--cor-marrom);
+    color:var(--cor-marrom);
 
-    color:#B86B4B;
 }
 
 .btn-secondary:hover{
 
-    background:#B86B4B;
+    background:var(--cor-marrom);
+    color:#fff;
 
-    color:white;
 }
 
 .btn-menu{
 
-    background:#5B3A29;
+    background:var(--cor-marrom);
+    color:#fff;
 
-    color:white;
 }
 
-/* ===== HERO ===== */
+/* ==========================================
+   HERO
+========================================== */
 
 .hero{
 
-    padding:80px 0;
+    padding:170px 0 120px;
+
+    background:linear-gradient(180deg,#FFFDF8 0%,#FAF6EF 100%);
+
 }
 
 .hero-grid{
 
     display:grid;
 
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:1.1fr .9fr;
+
+    gap:60px;
 
     align-items:center;
 
-    gap:60px;
 }
 
-.hero h1{
+.tag{
 
-    font-size:54px;
+    display:inline-block;
 
-    margin-bottom:20px;
+    background:#F8F1DF;
 
-    color:#5B3A29;
+    color:var(--cor-dourado);
+
+    padding:10px 20px;
+
+    border-radius:999px;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    margin-bottom:25px;
+
 }
 
 .hero p{
 
     font-size:20px;
 
+    color:#555;
+
     margin-bottom:35px;
+
+    max-width:620px;
+
 }
 
 .hero-buttons{
 
     display:flex;
 
-    gap:20px;
+    gap:18px;
+
+    margin-bottom:35px;
+
+    flex-wrap:wrap;
+
 }
 
-.hero img{
+.hero-list{
 
-    width:100%;
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:15px;
+
+    font-weight:500;
+
 }
 
-/* ===== BENEFÍCIOS ===== */
+.hero-list li{
 
-.beneficios{
+    display:flex;
 
-    padding:80px 0;
+    align-items:center;
 
-    background:white;
+    gap:10px;
+
 }
 
-.beneficios h2{
+.hero-image{
 
     text-align:center;
 
-    font-size:40px;
-
-    margin-bottom:50px;
 }
+
+.hero-image img{
+
+    max-width:520px;
+
+    margin:auto;
+
+    filter:drop-shadow(0 35px 45px rgba(0,0,0,.18));
+
+    animation:flutuar 5s ease-in-out infinite;
+
+}
+
+/* ==========================================
+   ANIMAÇÃO
+========================================== */
+
+@keyframes flutuar{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+/* ==========================================
+   SEÇÕES
+========================================== */
+
+section{
+
+    padding:100px 0;
+
+}
+
+.beneficios,
+.conteudo{
+
+    background:#FFFDF8;
+
+}
+
+/* ==========================================
+   CARDS
+========================================== */
 
 .cards{
 
     display:grid;
 
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 
     gap:30px;
+
 }
 
 .card{
 
-    background:#F8F3EB;
+    background:#FFFFFF;
+
+    border-radius:20px;
 
     padding:35px;
 
-    border-radius:14px;
+    border:1px solid #ECE7DD;
 
-    text-align:center;
+    box-shadow:0 12px 35px rgba(0,0,0,.05);
 
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.35s;
 
-    transition:.3s;
 }
 
 .card:hover{
 
-    transform:translateY(-8px);
+    transform:translateY(-10px);
+
+    box-shadow:0 25px 45px rgba(0,0,0,.12);
+
 }
 
 .card h3{
 
-    margin:15px 0;
+    margin:20px 0 15px;
+
+    font-size:30px;
+
 }
 
-/* ===== CTA ===== */
+.card p{
 
-.cta{
+    color:#666;
 
-    padding:90px 0;
+    font-size:16px;
 
-    text-align:center;
 }
 
-.cta h2{
+.icone{
 
-    font-size:42px;
+    width:75px;
 
-    margin-bottom:30px;
+    height:75px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:34px;
+
+    border-radius:50%;
+
+    background:#F8F1DF;
+
+}
+/* ==========================================
+   GARANTIA
+========================================== */
+
+.garantia{
+
+    background:#F8F4EB;
+
 }
 
-/* ===== FOOTER ===== */
+.garantia-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:40px;
+
+    background:#FFF;
+
+    border-radius:20px;
+
+    padding:50px;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.08);
+
+}
+
+.garantia-icon{
+
+    font-size:70px;
+
+}
+
+.garantia h3{
+
+    font-size:36px;
+
+    margin-bottom:15px;
+
+}
+/* ==========================================
+   FAQ
+========================================== */
+
+.faq{
+
+    background:#FFFDF8;
+
+}
+
+.faq-item{
+
+    background:#FFF;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    margin-bottom:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.05);
+
+}
+
+.faq-item h3{
+
+    margin-bottom:10px;
+
+    font-size:28px;
+
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
 
 footer{
 
-    background:#2F2A26;
+    background:#4E342E;
 
-    color:white;
+    color:#FFF;
+
+    padding:70px 0;
 
     text-align:center;
 
-    padding:35px 0;
 }
+
+footer h2{
+
+    color:#FFF;
+
+    margin-bottom:20px;
+
+}
+
+footer p{
+
+    opacity:.85;
+
+    margin-top:10px;
+
+}
+
+
+
